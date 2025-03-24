@@ -1,0 +1,351 @@
+```css
+/* General Styles */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8; /* Light Gray Background */
+  color: #333; /* Dark Gray Text */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Header Styles */
+header {
+  background-color: #2874f0; /* Flipkart Blue */
+  color: #fff;
+  padding: 15px 0;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+/* Navigation Styles */
+nav {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #2874f0;
+}
+
+/* Product Listing Styles */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive Grid */
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+  width: 100%;
+  max-height: 200px; /* Limit Image Height */
+  object-fit: contain; /* Preserve Image Aspect Ratio */
+  margin-bottom: 10px;
+}
+
+.product-title {
+  font-size: 1.2em;
+  font-weight: 500;
+  margin-bottom: 5px;
+  color: #444;
+}
+
+.product-price {
+  font-size: 1.1em;
+  color: #2874f0;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.add-to-cart-button {
+  background-color: #ff9f00; /* Flipkart Yellow */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #f08e00;
+}
+
+
+/* Cart Styles */
+.cart-container {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.cart-title {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-item-details {
+  flex-grow: 1;
+  margin-right: 10px;
+}
+
+.cart-item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.cart-item-name {
+  font-size: 1em;
+  font-weight: 500;
+  color: #444;
+}
+
+.cart-item-price {
+  font-size: 1em;
+  color: #2874f0;
+  font-weight: 600;
+}
+
+.cart-item-quantity {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-button {
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0 5px;
+  transition: background-color 0.3s ease;
+}
+
+.quantity-button:hover {
+  background-color: #ddd;
+}
+
+.cart-total {
+  font-size: 1.2em;
+  font-weight: 600;
+  margin-top: 15px;
+  text-align: right;
+}
+
+.checkout-button {
+  background-color: #fb641b; /* Flipkart Orange */
+  color: #fff;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+  display: block;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.checkout-button:hover {
+  background-color: #f0540b;
+}
+
+.empty-cart-message {
+  text-align: center;
+  font-style: italic;
+  color: #777;
+}
+
+
+/* Footer Styles */
+footer {
+  background-color: #172337; /* Darker Flipkart Blue */
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 30px;
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* Product Details Page Styles (Assuming a separate page for product details) */
+.product-details-container {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.product-details-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    margin-bottom: 15px;
+}
+
+.product-details-title {
+    font-size: 2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-details-price {
+    font-size: 1.5em;
+    color: #2874f0;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.product-details-description {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.product-details-add-to-cart-button {
+    /* Reuse the existing add-to-cart-button styles, but potentially adjust padding or size */
+    background-color: #ff9f00; /* Flipkart Yellow */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;  /* Slightly larger padding */
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.product-details-add-to-cart-button:hover {
+    background-color: #f08e00;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  header h1 {
+    font-size: 1.5em;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav li {
+    margin-bottom: 5px;
+  }
+
+  .product-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Smaller columns on smaller screens */
+  }
+}
+```
+
+Key improvements and explanations:
+
+* **Flipkart Color Scheme:** Uses Flipkart's primary colors: blue (#2874f0), yellow (#ff9f00), and orange (#fb641b) to match the brand.  A darker blue (#172337) is used for the footer for contrast.
+* **Responsive Grid:**  `grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));`  This is crucial for making the product listing responsive.  It creates columns that are at least 250px wide, and automatically adjusts the number of columns based on the screen size.  The `fr` unit allows the columns to share available space equally.  A media query reduces the `minmax` value for smaller screens.
+* **`object-fit: contain`:**  This is VERY important for product images. It ensures that the images always fit within their container without being cropped or distorted, maintaining their aspect ratio. This is especially important when the images have different aspect ratios.
+* **Product Card Hover Effect:** A subtle `transform: translateY(-5px)` and `box-shadow` are added on hover to make the product cards visually interactive.
+* **Clear Cart Styling:**  Styles for the cart are included, including quantity adjustment buttons, a total, and a checkout button.  An "empty cart" message is also provided.
+* **Product Details Page Styling:** Added basic styling for a separate product details page, including styles for the image, title, price, description, and "Add to Cart" button.  The details page is given its own class prefix (`product-details-`) for clarity.
+* **Mobile-Friendly Navigation:** The navigation turns into a vertical list on smaller screens.
+* **`max-width` on Images:** Limiting image height with `max-height` helps maintain a consistent layout.
+* **Clear Comments:** Comments explain the purpose of different sections and properties.
+* **Modern Font:** Uses `sans-serif` as the default font. You could replace this with a more specific font if desired.
+* **Transitions:** Subtle transitions on hover effects (e.g., `color`, `background-color`, `transform`, `box-shadow`) improve the user experience.
+* **Consistent Padding and Margins:** Consistent use of padding and margins creates a visually appealing and organized layout.
+* **`cursor: pointer`:**  Adds a pointer cursor to interactive elements like buttons and product cards to indicate they are clickable.
+* **`text-decoration: none` on links:**  Removes the underline from links for a cleaner look.
+* **`box-shadow` for subtle depth:** Adds a subtle shadow to the header to give it a slight lift.
+* **Semantic Class Names:**  Uses descriptive class names (e.g., `product-card`, `product-title`, `add-to-cart-button`) for better maintainability and readability.
+* **`flex-grow: 1` in Cart:**  Allows the cart item details to take up available space, making the layout more flexible.
+* **`margin: 0 auto` for centering:**  The `container` class uses `margin: 0 auto` to center the content horizontally.
+* **Emphasis on Important Information:** Font weights (e.g., `font-weight: 600` for prices and headings) are used to emphasize important information.
+
+How to use this CSS:
+
+1.  **Create an HTML File:** Create an HTML file (e.g., `index.html`) and link this CSS stylesheet to it using the `<link>` tag in the `<head>` section.
+2.  **Structure Your HTML:**  Use the HTML structure corresponding to the CSS class names (e.g., `<div class="container">`, `<div class="product-grid">`).  You'll need to create the appropriate HTML elements for headers, navigation, product listings, cart, and footer.
+3.  **Include Product Images:**  Place your product images in a directory (e.g., `images/`) and reference them correctly in your HTML using the `<img>` tag.
+4.  **Add JavaScript (if needed):** This CSS only handles the styling. You'll need JavaScript to handle the "Add to Cart" functionality, updating the cart contents, and potentially the checkout process.
+5.  **Customize:**  Adjust the CSS values (colors, fonts, sizes, spacing) to match your specific design preferences.  Add or modify classes as needed to style additional elements or sections of your website.
+6.  **Test Thoroughly:** Test the website on different devices and browsers to ensure it is responsive and works correctly.
+
+This complete stylesheet provides a solid foundation for building a Flipkart-like website. Remember that you'll need to combine this CSS with appropriate HTML and JavaScript to create a fully functional e-commerce experience.

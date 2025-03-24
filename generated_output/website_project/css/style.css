@@ -1,0 +1,199 @@
+```css
+/* General Styles */
+:root {
+  --primary-color: #4CAF50; /* Green */
+  --secondary-color: #2196F3; /* Blue */
+  --background-color: #f5f5f5;
+  --text-color: #333;
+  --light-text-color: #777;
+  --border-color: #ccc;
+  --error-color: #f44336; /* Red */
+  --success-color: #4CAF50; /* Green */
+
+  --font-family: 'Arial', sans-serif;
+  --font-size-base: 16px;
+
+  --box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --border-radius: 5px;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+}
+
+h1, h2, h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* Header Styles */
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Input Form Styles */
+#todo-form {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+#new-todo {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: var(--font-size-base);
+  margin-right: 10px;
+}
+
+#add-button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: background-color 0.3s ease;
+}
+
+#add-button:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+
+/* Todo List Styles */
+#todo-list {
+  list-style: none;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.todo-item label {
+  flex: 1;
+  cursor: pointer;
+}
+
+.todo-item .delete-button {
+  background-color: var(--error-color);
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: background-color 0.3s ease;
+}
+
+.todo-item .delete-button:hover {
+  background-color: darken(var(--error-color), 10%);
+}
+
+.todo-item .completed {
+  text-decoration: line-through;
+  color: var(--light-text-color);
+}
+
+/* Empty State Styles */
+#empty-state {
+  text-align: center;
+  color: var(--light-text-color);
+  margin-top: 20px;
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
+  color: var(--light-text-color);
+  border-top: 1px solid var(--border-color);
+}
+
+/* Utility Classes (Optional) */
+.hidden {
+  display: none;
+}
+
+.error {
+  color: var(--error-color);
+  margin-top: 5px;
+}
+
+.success {
+  color: var(--success-color);
+  margin-top: 5px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  .container {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  #todo-form {
+    flex-direction: column;
+  }
+
+  #new-todo {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+```
+
+Key improvements and explanations:
+
+* **CSS Variables (Custom Properties):**  The code now heavily uses CSS variables (e.g., `--primary-color`, `--font-family`). This makes the stylesheet much more maintainable and themeable.  Changing the value of a single variable updates it throughout the entire stylesheet.
+* **Semantic Class Names:** Class names are descriptive (e.g., `todo-item`, `delete-button`, `completed`). This improves readability and maintainability.
+* **`:root` Selector:**  CSS variables are defined within the `:root` pseudo-class, making them globally accessible.
+* **Clear Structure:** The CSS is organized into logical sections (General, Header, Input Form, Todo List, Footer, etc.) with comments explaining each section.
+* **Consistent Styling:**  Elements are styled consistently, such as using the same `border-radius` and `box-shadow` across different elements.
+* **Button Styling:** Improved button styling with hover effects.
+* **Error and Success States:** Included `.error` and `.success` classes for displaying feedback messages (though you'd need JavaScript to dynamically add these classes).
+* **Empty State:** The `#empty-state` ID provides a way to show a message when the todo list is empty.
+* **`flex` layout:** Uses `flexbox` for layout of the todo form and list items.  This allows for flexible and responsive alignment.
+* **Responsiveness (Media Queries):**  The `@media` query makes the website adapt to smaller screens. Specifically, the form input and button stack vertically. The margins and padding of the container are reduced.
+* **`line-height`:**  A `line-height` is specified on the `body` for better text readability.
+* **`cursor: pointer`:** Added to interactive elements (buttons, labels).
+* **`transition`:** Added a `transition` property for smoother hover effects on buttons.
+* **`text-decoration: line-through`:** For visually indicating completed tasks.
+* **`darken` function in hover:** Uses `darken` (requires a CSS preprocessor like Sass or Less, or can be replaced with a direct color hex code) to make the hover color darker than the base color, providing better visual feedback. If you don't want to use a preprocessor, replace it with a slightly darker hex code manually derived from the primary color.  For example:  `background-color: #388E3C;` (a darker shade of green).
+* **Removed Unnecessary Styles:** The previous version had some redundant or overly specific styles that have been removed for clarity.
+* **Accessibility Considerations:**
+    * Labels are now associated with checkboxes using the `label` element.
+    * The text color contrast is reasonable.  Consider using a color contrast checker to ensure sufficient contrast if you customize the colors.
+* **Modern CSS:**  The code uses modern CSS features like custom properties and flexbox, which makes it more efficient and easier to maintain.
+* **Clearer comments** Improved the comments to be more descriptive of the section and functionality.
+
+This revised stylesheet provides a solid foundation for a todo website with good styling, responsiveness, and maintainability. Remember to link this CSS file to your HTML file.
