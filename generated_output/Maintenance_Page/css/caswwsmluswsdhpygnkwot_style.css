@@ -1,0 +1,203 @@
+```css
+/* General Styles */
+body {
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Ensure content takes full viewport height */
+}
+
+.container {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px; /* Limit the width for readability */
+  width: 90%; /* Responsive width */
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+  color: #e44d26; /* Orange color - can be adjusted */
+}
+
+p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+/* Team Section */
+.team {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.team h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.team-members {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column; /* Stack team members vertically on smaller screens */
+  align-items: flex-start; /* Align text to the left */
+}
+
+.team-members li {
+  margin-bottom: 5px;
+  font-size: 1em;
+}
+
+
+/* Footer */
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #777;
+  font-size: 0.9em;
+}
+
+
+/*  Media Queries for Responsiveness */
+@media (max-width: 600px) {
+  h1 {
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 1.1em;
+  }
+
+  .container {
+    width: 95%;
+    padding: 15px;
+  }
+  .team-members {
+    flex-direction: column; /* Ensure vertical stacking on small screens */
+    align-items: flex-start; /* Keep text alignment consistent */
+  }
+
+}
+
+/* Optional:  Add a loading animation/image */
+.loading-indicator {
+  margin-top: 20px;
+}
+
+.loading-indicator img {
+  width: 50px;  /* Adjust size as needed */
+  height: 50px;
+  animation: spin 2s linear infinite; /* Simple spinning animation */
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+
+/* Alternative theme (Dark mode example) */
+.dark-mode body {
+  background-color: #222;
+  color: #eee;
+}
+
+.dark-mode .container {
+  background-color: #333;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.dark-mode h1 {
+  color: #f9a825; /* Dark mode orange */
+}
+
+.dark-mode .team h2 {
+  color: #ddd;
+}
+
+.dark-mode footer {
+  color: #aaa;
+}
+```
+
+Key improvements and explanations:
+
+* **Comprehensive Styling:** Styles address everything from basic body layout to specific elements.
+* **Responsive Design:**  Uses media queries (`@media (max-width: 600px)`) to ensure the site looks good on smaller screens (phones).  This is *crucial* for modern websites.  The container width is adjusted, and font sizes are reduced.  The team members are explicitly stacked vertically to avoid horizontal overflow.
+* **Clear Structure:** The CSS is organized into sections for easier reading and modification:
+    * `General Styles`
+    * `Team Section`
+    * `Footer`
+    * `Media Queries`
+* **Semantic Class Names:** Uses descriptive class names like `container`, `team`, `team-members`.
+* **Centering:**  Uses `display: flex`, `justify-content: center`, and `align-items: center` on the `body` to perfectly center the content both horizontally and vertically.  `min-height: 100vh` makes sure the content fills the entire viewport.
+* **Readability:** Uses line breaks and comments for better code readability.
+* **Color Palette:** Uses a simple, clean color palette.  The orange color for the heading is a good accent.  Easily customizable.
+* **Width Limiting:** `max-width` on the `container` keeps the content from stretching too wide on large screens, improving readability.  `width: 90%` makes the container responsive.
+* **Team Section Styling:** Specifically styles the team members list.  Uses `flex-direction: column` within the media query to ensure a clear, vertical layout on smaller screens. The `align-items: flex-start` maintains the left alignment of the team member names.
+* **Footer:** Styles the footer for consistent presentation.
+* **Loading Indicator (Optional):**  Includes optional styles for a loading indicator, with a spinning animation.  This is placed as a comment and can be easily added to the HTML if you have a loading image.
+* **Dark Mode (Optional):** Provides a basic dark mode theme as an example. To enable it, you would add the class `dark-mode` to the `<body>` tag in your HTML.
+* **`box-shadow`:**  Adds a subtle shadow to the container for visual appeal.
+* **`border-radius`:** Adds rounded corners for a softer look.
+* **`line-height`:**  Improves readability of the paragraph text.
+
+How to use this CSS:
+
+1. **Save the code:** Save the code above as a `.css` file (e.g., `styles.css`).
+2. **Link to your HTML:** In the `<head>` section of your HTML file, add the following line:
+
+   ```html
+   <link rel="stylesheet" href="styles.css">
+   ```
+
+3. **Add HTML content:** Use the following HTML structure, incorporating the classes defined in the CSS:
+
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <title>Site Under Maintenance</title>
+       <link rel="stylesheet" href="styles.css">
+   </head>
+   <body>
+       <div class="container">
+           <h1>Site Under Maintenance</h1>
+           <p>We're currently working on some improvements and will be back online soon. Thank you for your patience.</p>
+
+           <!-- Optional: Add a loading image here -->
+           <!-- <div class="loading-indicator">
+                <img src="loading.gif" alt="Loading...">
+           </div> -->
+
+           <div class="team">
+               <h2>Team</h2>
+               <ul class="team-members">
+                   <li>Co-founder: Deepjoy Roy</li>
+                   <li>Co-founder: Himanshu Raj</li>
+                   <li>Product Designer: Yash Tupkar</li>
+                   <li>GenAI Engineer: Nitin Kumar Singh</li>
+               </ul>
+           </div>
+
+           <footer>&copy; 2024 Your Company</footer>
+       </div>
+   </body>
+   </html>
+   ```
+
+Remember to create the `loading.gif` file and place it in the same directory as your HTML file if you are using the loading indicator.  Also, update "Your Company" in the footer.  You can add the `dark-mode` class to the `<body>` tag to see the dark mode styling.
